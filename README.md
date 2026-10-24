@@ -2,6 +2,8 @@
 
 LeetCode Automater is a Node.js submission runner backed by a validated, multi-language problem dataset. It fetches source solutions, submits them through an authenticated LeetCode session, waits for the final judge result, and records only accepted submissions as successful.
 
+Maintained and developed by [Thillai Nirmal K](https://github.com/thillainirmal-tech).
+
 > Use this project responsibly. Review LeetCode's current terms and rate limits before running automation. Never commit or share your session token.
 
 ## Features
@@ -94,6 +96,6 @@ npm run validate
 
 ## License and attribution
 
-This project is licensed under the [MIT License](LICENSE). Solution records may reference upstream public repositories; their respective licenses and attribution requirements continue to apply.
+This project is maintained by Thillai Nirmal K and licensed under the [MIT License](LICENSE). Copyright for the current modifications and expanded implementation belongs to Thillai Nirmal K. Solution records may reference upstream public repositories; their respective licenses and attribution requirements continue to apply.
 
-The project is based on the original [LeetcodeAutomater](https://github.com/Omkumar2003/LeetcodeAutomater) and has been expanded with multi-language sources, validation, live solved-state filtering, and submission reliability improvements.
+The project is based on the original [LeetcodeAutomater](https://github.com/Omkumar2003/LeetcodeAutomater). Its original MIT copyright notice is retained as required. This repository has been substantially expanded with multi-language sources, validation, live solved-state filtering, and submission reliability improvements.

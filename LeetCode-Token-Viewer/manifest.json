@@ -1,6 +1,7 @@
 {
   "name": "LeetCode Token Viewer",
   "description": "Merge your LeetCode session and CSRF token",
+  "author": "Thillai Nirmal K",
   "version": "1.0",
   "manifest_version": 3,
   "permissions": ["cookies", "activeTab", "scripting"],

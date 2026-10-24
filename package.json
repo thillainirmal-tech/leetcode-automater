@@ -3,6 +3,16 @@
   "version": "1.1.0",
   "private": true,
   "description": "Submit verified solutions in each LeetCode question's supported language.",
+  "author": "Thillai Nirmal K (https://github.com/thillainirmal-tech)",
+  "license": "MIT",
+  "homepage": "https://github.com/thillainirmal-tech/leetcode-automater#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thillainirmal-tech/leetcode-automater.git"
+  },
+  "bugs": {
+    "url": "https://github.com/thillainirmal-tech/leetcode-automater/issues"
+  },
   "scripts": {
     "start": "node ok.js",
     "loop": "node loop.js",
