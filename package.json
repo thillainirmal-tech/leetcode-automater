@@ -1,0 +1,20 @@
+{
+  "name": "leetcode-automater",
+  "version": "1.1.0",
+  "private": true,
+  "description": "Submit verified solutions in each LeetCode question's supported language.",
+  "scripts": {
+    "start": "node ok.js",
+    "loop": "node loop.js",
+    "filter-unsolved": "node filter-unsolved.js",
+    "extend-java-dataset": "node extend-java-dataset.js",
+    "extend-non-java-dataset": "node extend-non-java-dataset.js",
+    "extend-live-remaining": "node extend-live-remaining.js",
+    "extend-alternate-sources": "node extend-alternate-sources.js",
+    "repair-failed-sources": "node repair-failed-sources.js",
+    "validate": "node validate-project.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
