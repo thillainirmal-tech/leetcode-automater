@@ -1,5 +1,10 @@
 # LeetCode Automater
 
+[![Validation](https://github.com/thillainirmal-tech/leetcode-automater/actions/workflows/validate.yml/badge.svg)](https://github.com/thillainirmal-tech/leetcode-automater/actions/workflows/validate.yml)
+[![Latest release](https://img.shields.io/github/v/release/thillainirmal-tech/leetcode-automater?display_name=tag&sort=semver)](https://github.com/thillainirmal-tech/leetcode-automater/releases/latest)
+[![Node.js](https://img.shields.io/badge/Node.js-18%2B-339933?logo=nodedotjs&logoColor=white)](https://nodejs.org/)
+[![License](https://img.shields.io/github/license/thillainirmal-tech/leetcode-automater)](LICENSE)
+
 LeetCode Automater is a Node.js submission runner backed by a validated, multi-language problem dataset. It fetches source solutions, submits them through an authenticated LeetCode session, waits for the final judge result, and records only accepted submissions as successful.
 
 Maintained and developed by [Thillai Nirmal K](https://github.com/thillainirmal-tech).
@@ -107,3 +112,4 @@ npm run validate
 This project is maintained by Thillai Nirmal K and licensed under the [MIT License](LICENSE). Copyright for the current modifications and expanded implementation belongs to Thillai Nirmal K. Solution records may reference upstream public repositories; their respective licenses and attribution requirements continue to apply.
 
 This repository includes inherited MIT-licensed components, with applicable notices retained in [LICENSE](LICENSE). The current project has been substantially expanded with multi-language sources, validation, live solved-state filtering, and submission reliability improvements.
+
