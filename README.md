@@ -98,4 +98,4 @@ npm run validate
 
 This project is maintained by Thillai Nirmal K and licensed under the [MIT License](LICENSE). Copyright for the current modifications and expanded implementation belongs to Thillai Nirmal K. Solution records may reference upstream public repositories; their respective licenses and attribution requirements continue to apply.
 
-The project is based on the original [LeetcodeAutomater](https://github.com/Omkumar2003/LeetcodeAutomater). Its original MIT copyright notice is retained as required. This repository has been substantially expanded with multi-language sources, validation, live solved-state filtering, and submission reliability improvements.
+This repository includes inherited MIT-licensed components, with applicable notices retained in [LICENSE](LICENSE). The current project has been substantially expanded with multi-language sources, validation, live solved-state filtering, and submission reliability improvements.
