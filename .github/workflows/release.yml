@@ -4,6 +4,11 @@ on:
   push:
     branches:
       - main
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
 
 jobs:
   build:
@@ -30,7 +35,7 @@ jobs:
       - name: Zip Chrome Extension
         run: |
           cd LeetCode-Token-Viewer
-          zip -r ../LeetcodeAutomater-extension.zip .
+          zip -r ../LeetCode-Token-Viewer.zip .
 
       - name: Upload Executable Artifact
         uses: actions/upload-artifact@v4
@@ -42,4 +47,15 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: LeetcodeAutomater-extension
-          path: LeetcodeAutomater-extension.zip
+          path: LeetCode-Token-Viewer.zip
+
+      - name: Publish GitHub Release
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          name: LeetCode Automater ${{ github.ref_name }}
+          generate_release_notes: true
+          make_latest: true
+          files: |
+            LeetcodeAutomater.exe
+            LeetCode-Token-Viewer.zip

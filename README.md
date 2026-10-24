@@ -24,6 +24,14 @@ Maintained and developed by [Thillai Nirmal K](https://github.com/thillainirmal-
 
 No npm dependencies are required for the Node.js runner.
 
+## Latest release
+
+Download the current packaged release from [GitHub Releases](https://github.com/thillainirmal-tech/leetcode-automater/releases/latest):
+
+- [Windows executable](https://github.com/thillainirmal-tech/leetcode-automater/releases/latest/download/LeetcodeAutomater.exe)
+- [Chrome extension ZIP](https://github.com/thillainirmal-tech/leetcode-automater/releases/latest/download/LeetCode-Token-Viewer.zip)
+- [Source code](https://github.com/thillainirmal-tech/leetcode-automater/archive/refs/heads/main.zip)
+
 ## Quick start
 
 ```bash

@@ -13,6 +13,11 @@
   "bugs": {
     "url": "https://github.com/thillainirmal-tech/leetcode-automater/issues"
   },
+  "pkg": {
+    "assets": [
+      "solutions/**/*"
+    ]
+  },
   "scripts": {
     "start": "node ok.js",
     "loop": "node loop.js",

@@ -2,6 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const readline = require("readline");
 const mergedData = require("./merged_output.json");
+const RUNTIME_DIR = process.pkg ? path.dirname(process.execPath) : __dirname;
 
 function submissionLanguageFor(problem) {
   if (problem.walkcc_url?.includes("kamyu104/LeetCode-Solutions/master/Python/")) {
@@ -82,9 +83,9 @@ const CONFIG = {
   EXCLUDE_IDS: idSetFromEnv("EXCLUDE_IDS"),
   JUDGING_POLL_MS: 1000,
   JUDGING_TIMEOUT_MS: 60000,
-  PROGRESS_FILE: path.join(__dirname, "progress.json"),
-  SKIPPED_FILE: path.join(__dirname, "skipped.log"),
-  STOP_FILE: path.join(__dirname, "loop_stop.flag"),
+  PROGRESS_FILE: path.join(RUNTIME_DIR, "progress.json"),
+  SKIPPED_FILE: path.join(RUNTIME_DIR, "skipped.log"),
+  STOP_FILE: path.join(RUNTIME_DIR, "loop_stop.flag"),
   DATA_FILE: mergedData,
 };
 
