@@ -3,7 +3,7 @@
 ## 👋 Introduction
 
 Welcome to our project!  
-We’re thrilled that you’re interested in contributing during **Hacktoberfest** 🎉  
+We’re thrilled that you’re interested in contributing during **thillainirmal-tech** 🎉  
 
 Our goal is to build a friendly, safe, and inclusive environment where everyone — regardless of background, experience, or identity — feels welcome to participate and learn.
 
@@ -106,7 +106,7 @@ This Code of Conduct is adapted from the [Contributor Covenant v2.1](https://www
 
 ---
 
-## 💚 Hacktoberfest Note
+## 💚 thillainirmal-tech Note
 
 We encourage **first-time contributors**!  
 If you’re new to open source or GitHub, don’t worry — we’re here to help.  
