@@ -1,336 +1,93 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LeetCode Automater - Automate Your LeetCode Journey</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        :root {
-            --primary: #667eea;
-            --secondary: #764ba2;
-            --bg-light: #f8fafc;
-            --bg-dark: #1a202c;
-            --text-light: #2d3748;
-            --text-dark: #f7fafc;
-            --card-light: #ffffff;
-            --card-dark: #2d3748;
-            --shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        
-        body {
-            font-family: 'Segoe UI', system-ui, sans-serif;
-            line-height: 1.6;
-            transition: all 0.3s ease;
-        }
-        
-        .light-theme {
-            background: var(--bg-light);
-            color: var(--text-light);
-        }
-        
-        .dark-theme {
-            background: var(--bg-dark);
-            color: var(--text-dark);
-        }
-        
-        .theme-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1000;
-            background: var(--primary);
-            color: white;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 50px;
-            cursor: pointer;
-            font-weight: bold;
-            box-shadow: var(--shadow);
-            transition: transform 0.3s ease;
-        }
-        
-        .theme-toggle:hover { transform: scale(1.05); }
-        
-        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-        
-        header {
-            text-align: center;
-            padding: 4rem 0;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            margin-bottom: 3rem;
-        }
-        
-        .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-        
-        .hero p {
-            font-size: 1.25rem;
-            opacity: 0.9;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-        
-        .feature {
-            background: var(--card-light);
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: var(--shadow);
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-        
-        .dark-theme .feature { background: var(--card-dark); }
-        
-        .feature:hover { transform: translateY(-5px); }
-        
-        .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            display: block;
-        }
-        
-        .downloads {
-            text-align: center;
-            margin: 4rem 0;
-        }
-        
-        .download-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-        
-        .download-btn {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            padding: 1rem 2rem;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow);
-        }
-        
-        .download-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-        }
-        
-        .tutorial {
-            background: var(--card-light);
-            border-radius: 12px;
-            padding: 3rem;
-            margin: 3rem 0;
-            box-shadow: var(--shadow);
-        }
-        
-        .dark-theme .tutorial { background: var(--card-dark); }
-        
-        .step {
-            display: flex;
-            align-items: flex-start;
-            margin: 2rem 0;
-            gap: 1rem;
-        }
-        
-        .step-number {
-            background: var(--primary);
-            color: white;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            flex-shrink: 0;
-        }
-        
-        .code {
-            background: #2d3748;
-            color: #e2e8f0;
-            padding: 1rem;
-            border-radius: 8px;
-            font-family: 'Courier New', monospace;
-            margin: 1rem 0;
-        }
-        
-        footer {
-            text-align: center;
-            padding: 2rem;
-            margin-top: 4rem;
-            border-top: 1px solid #e2e8f0;
-        }
-        
-        .dark-theme footer { border-color: #4a5568; }
-        
-        @media (max-width: 768px) {
-            .container { padding: 10px; }
-            header { padding: 2rem 0; }
-            .hero h1 { font-size: 2.5rem; }
-            .step { flex-direction: column; }
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A validated, multi-language LeetCode submission toolkit with live solved-state filtering.">
+  <title>LeetCode Automater</title>
+  <link rel="stylesheet" href="index.css">
 </head>
-<body class="light-theme">
-    <button class="theme-toggle" onclick="toggleTheme()" id="themeToggle">🌙 Dark</button>
-    
-    <header>
-        <div class="hero">
-            <h1>🚀 LeetCode Automater</h1>
-            <p>Automate your LeetCode submissions effortlessly with our powerful Chrome extension and executable tool</p>
-        </div>
-    </header>
-    
-    <div class="container">
-        <section class="features">
-            <div class="feature">
-                <span class="feature-icon">🔄</span>
-                <h3>Automatic Submissions</h3>
-                <p>Submit verified Java solutions and wait for LeetCode's final Accepted result</p>
-            </div>
-            <div class="feature">
-                <span class="feature-icon">🎯</span>
-                <h3>Smart Filtering</h3>
-                <p>Use only unsolved, free algorithm problems with verified Java source files</p>
-            </div>
-            <div class="feature">
-                <span class="feature-icon">📊</span>
-                <h3>Progress Tracking</h3>
-                <p>Track submissions with detailed progress.json and skipped.log files</p>
-            </div>
-            <div class="feature">
-                <span class="feature-icon">🔐</span>
-                <h3>Secure Token Extraction</h3>
-                <p>Use our Chrome extension to safely get your LeetCode session tokens</p>
-            </div>
-        </section>
-        
-        <section class="downloads">
-            <h2>📥 Get Started - Choose Your Option</h2>
-            <div class="download-grid">
-                <div>
-                    <h3>💻 Windows Executable</h3>
-                    <p>Ready-to-use executable file</p>
-                    <a href="https://github.com/thillainirmal-tech/leetcode-automater#quick-start" class="download-btn">Run from Source</a>
-                </div>
-                <div>
-                    <h3>🔌 Chrome Extension</h3>
-                    <p>Extract LeetCode tokens easily</p>
-                    <a href="https://github.com/thillainirmal-tech/leetcode-automater/tree/main/LeetCode-Token-Viewer" class="download-btn">View Extension</a>
-                </div>
-                <div>
-                    <h3>📂 Source Code</h3>
-                    <p>Run from source with Node.js</p>
-                    <a href="https://github.com/thillainirmal-tech/leetcode-automater/archive/refs/heads/main.zip" class="download-btn">Download Source</a>
-                </div>
-            </div>
-        </section>
-        
-        <section class="tutorial">
-            <h2>🛠️ Step-by-Step Tutorial</h2>
-            
-            <div class="step">
-                <div class="step-number">1</div>
-                <div>
-                    <h3>Download & Install Chrome Extension</h3>
-                    <p>Download the extension ZIP file and extract it. Then:</p>
-                    <div class="code">1. Open Chrome → chrome://extensions
-2. Enable Developer Mode (top-right)
-3. Click "Load unpacked"
-4. Select the LeetCode-Token-Viewer folder</div>
-                </div>
-            </div>
-            
-            <div class="step">
-                <div class="step-number">2</div>
-                <div>
-                    <h3>Get Your Merge Token</h3>
-                    <p>Log into LeetCode, then use the extension to get your token:</p>
-                    <div class="code">1. Make sure you're logged into LeetCode
-2. Click the Chrome Extension icon
-3. Click "Copy Merge Token"
-4. Save this token for the next step</div>
-                </div>
-            </div>
-            
-            <div class="step">
-                <div class="step-number">3</div>
-                <div>
-                    <h3>Choose Your Method</h3>
-                    <p><strong>Option A: Use the EXE (Windows)</strong></p>
-                    <div class="code">1. Download LeetcodeAutomater.exe
-2. Run the executable
-3. Paste your Merge Token when prompted
-4. Let it automate your submissions!</div>
-                    
-                    <p><strong>Option B: Run from Source</strong></p>
-                    <div class="code">git clone https://github.com/thillainirmal-tech/leetcode-automater.git
-cd leetcode-automater
-node ok.js</div>
-                </div>
-            </div>
-            
-            <div class="step">
-                <div class="step-number">4</div>
-                <div>
-                    <h3>Monitor Progress</h3>
-                    <p>The tool will create progress files to track your submissions:</p>
-                    <div class="code">📁 progress.json - Tracks successful submissions
-📁 skipped.log - Lists skipped questions with reasons</div>
-                </div>
-            </div>
-        </section>
+<body>
+  <header class="hero">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand" href="https://github.com/thillainirmal-tech/leetcode-automater">LeetCode Automater</a>
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#quick-start">Quick start</a>
+        <a href="https://github.com/thillainirmal-tech/leetcode-automater/releases/latest">Download</a>
+      </div>
+    </nav>
+
+    <div class="hero-content">
+      <p class="eyebrow">1,396 validated problem records</p>
+      <h1>Submit verified solutions with a safer, reviewable workflow.</h1>
+      <p class="lede">A dependency-free Node.js toolkit for Java, Python, C++, TypeScript, SQL, Pandas and Bash submissions. It checks account state, waits for the final judge result and records only accepted runs.</p>
+      <div class="actions">
+        <a class="button primary" href="https://github.com/thillainirmal-tech/leetcode-automater/releases/latest">Get the latest release</a>
+        <a class="button secondary" href="https://github.com/thillainirmal-tech/leetcode-automater">View source</a>
+      </div>
+      <p class="safety">Your LeetCode session token stays local and in memory. Never paste it into an issue, commit or screenshot.</p>
     </div>
-    
-    <footer>
-        <p>Maintained by Thillai Nirmal K ❤️ | <a href="https://github.com/thillainirmal-tech/leetcode-automater" target="_blank">View on GitHub</a></p>
-    </footer>
-    
-    <script>
-        function toggleTheme() {
-            const body = document.body;
-            const toggle = document.getElementById('themeToggle');
-            
-            if (body.classList.contains('light-theme')) {
-                body.classList.remove('light-theme');
-                body.classList.add('dark-theme');
-                toggle.textContent = '☀️ Light';                    
-                localStorage.setItem('theme', 'dark');
-            } else {
-                body.classList.remove('dark-theme');
-                body.classList.add('light-theme');
-                toggle.textContent = '🌙 Dark';
-                localStorage.setItem('theme', 'light');
-            }
-        }
-        
-        // Load saved theme
-        window.addEventListener('DOMContentLoaded', () => {
-            const savedTheme = localStorage.getItem('theme');
-            const toggle = document.getElementById('themeToggle');
-            
-            if (savedTheme === 'dark') {
-                document.body.classList.remove('light-theme');
-                document.body.classList.add('dark-theme');
-                toggle.textContent = '☀️ Light';
-            }
-        });
-    </script>
+  </header>
+
+  <main>
+    <section class="section" id="features">
+      <div class="section-heading">
+        <p class="eyebrow">Built for controlled runs</p>
+        <h2>Useful automation without hiding what happens.</h2>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <h3>Validated dataset</h3>
+          <p>Checks unique IDs, supported languages, source URLs and local solution files before a run begins.</p>
+        </article>
+        <article class="card">
+          <h3>Live account filtering</h3>
+          <p>Skips already-solved problems and supports explicit retry and exclusion lists for focused sessions.</p>
+        </article>
+        <article class="card">
+          <h3>Final-result tracking</h3>
+          <p>Waits for LeetCode's judge and records a submission as successful only after an Accepted result.</p>
+        </article>
+        <article class="card">
+          <h3>Multi-language sources</h3>
+          <p>Includes Java, Python, C++, TypeScript, MySQL, Pandas and Bash records in one searchable catalogue.</p>
+        </article>
+        <article class="card">
+          <h3>Local token helper</h3>
+          <p>The included Chrome extension creates the Merge Token locally from an authenticated browser session.</p>
+        </article>
+        <article class="card">
+          <h3>Open validation</h3>
+          <p>The same project validator runs locally and in GitHub Actions, making dataset changes easy to review.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section quick-start" id="quick-start">
+      <div>
+        <p class="eyebrow">Three commands</p>
+        <h2>Validate before you automate.</h2>
+        <p>Review LeetCode's current terms and rate limits, then use a small target for your first run.</p>
+      </div>
+      <pre><code>git clone https://github.com/thillainirmal-tech/leetcode-automater.git
+cd leetcode-automater
+npm run validate
+npm start</code></pre>
+    </section>
+
+    <section class="section contribute">
+      <div>
+        <p class="eyebrow">Open source</p>
+        <h2>Improve the dataset, documentation or runner.</h2>
+        <p>Small, focused pull requests are welcome. Every contribution should pass the dependency-free validator.</p>
+      </div>
+      <a class="button primary" href="https://github.com/thillainirmal-tech/leetcode-automater/blob/main/CONTRIBUTING.md">Contribution guide</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>Maintained by <a href="https://github.com/thillainirmal-tech">Thillai Nirmal K</a>. Released under the MIT License.</p>
+  </footer>
 </body>
 </html>
