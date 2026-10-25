@@ -38,13 +38,13 @@ jobs:
           zip -r ../LeetCode-Token-Viewer.zip .
 
       - name: Upload Executable Artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: LeetcodeAutomater-exe
           path: LeetcodeAutomater.exe
 
       - name: Upload Extension Artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: LeetcodeAutomater-extension
           path: LeetCode-Token-Viewer.zip
