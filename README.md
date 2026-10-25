@@ -11,6 +11,8 @@ Maintained and developed by [Thillai Nirmal K](https://github.com/thillainirmal-
 
 > Use this project responsibly. Review LeetCode's current terms and rate limits before running automation. Never commit or share your session token.
 
+Explore the public landing page in [`website/index.html`](website/index.html), and see [CONTRIBUTING.md](CONTRIBUTING.md) for focused ways to help.
+
 ## Features
 
 - Supports Java, Python, C++, TypeScript, MySQL, Pandas, and Bash submissions.
@@ -107,9 +109,12 @@ Run this before committing dataset or solution changes:
 npm run validate
 ```
 
+## Contributing
+
+Corrections, validation improvements and documentation fixes are welcome. Start with the [contribution guide](CONTRIBUTING.md), keep pull requests focused, and run `npm run validate` before submitting.
+
 ## License and attribution
 
 This project is maintained by Thillai Nirmal K and licensed under the [MIT License](LICENSE). Copyright for the current modifications and expanded implementation belongs to Thillai Nirmal K. Solution records may reference upstream public repositories; their respective licenses and attribution requirements continue to apply.
 
 This repository includes inherited MIT-licensed components, with applicable notices retained in [LICENSE](LICENSE). The current project has been substantially expanded with multi-language sources, validation, live solved-state filtering, and submission reliability improvements.
-
